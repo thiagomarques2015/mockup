@@ -392,17 +392,21 @@ public void onTaskCompleted(String msg, Object object) {
 
 ### Releases ###
 
-[Mockup 1.2](http://oph.com.br/demo/thiago/mockup/release/1.2/mockup.jar)
+Mockup 1.3
+
+* Atualizado o projeto, criado o compile no Jitpack
+
+Mockup 1.2
 
 * Adicionado um gerenciador de tarefas assíncronas 
 
-[Mockup 1.1](http://oph.com.br/demo/thiago/mockup/release/1.1/mockup.jar)
+Mockup 1.1
 
 * Adicionado classes de requisição HTTP, com suporte a requisições POST e GET
 * Corrigido bugs da versão anterior
 
 
-[Mockup 1.0](http://oph.com.br/demo/thiago/mockup/release/1.0/mockup.jar)
+Mockup 1.0
 
 * Implementa navegação com tabs (material design - https://developer.android.com/intl/pt-br/design/material/index.html)
 * Utiliza a lib Glide (https://github.com/bumptech/glide) para abrir imagens (com design pattern) 
