@@ -1,11 +1,6 @@
 # Mockup
 Biblioteca para otimizar a construção de aplicativos em Android. Mockup versão 1.3 
 
-# README #
-
-Documentação sobre o framework Mockup versão 1.3 
-
-
 ## 1. Adicione o repositório JitPack no seu arquivo build 
 
 ``` gradle
