@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Framework</string>
+    <string name="complete_usando">Complete usando</string>
+    <string name="opcoes">Opções</string>
+    <string name="camera">Camera</string>
+    <string name="galeria">Galeria</string>
+</resources>
