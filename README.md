@@ -1,9 +1,5 @@
-# mockup
-Biblioteca para otimizar a construção de aplicativos em Android
-
-# README #
-
-Documentação sobre o framework Mockup versão 1.3 
+# Mockup
+Biblioteca para otimizar a construção de aplicativos em Android. Mockup versão 1.3 
 
 
 ## 1. Adicione o repositório JitPack no seu arquivo build 
