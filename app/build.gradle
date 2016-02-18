@@ -43,7 +43,7 @@ dependencies {
 }
 
 
-//task to delete the old jar
+/*//task to delete the old jar
 task deleteOldJar(type: Delete) {
     delete 'build/libs/mockup.jar'
 }
@@ -57,4 +57,4 @@ task exportJar(type: Copy) {
     rename('classes.jar', 'mockup.jar')
 }
 
-exportJar.dependsOn(deleteOldJar, build)
+exportJar.dependsOn(deleteOldJar, build)*/
