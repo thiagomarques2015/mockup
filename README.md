@@ -1,13 +1,16 @@
 # Mockup
 Biblioteca para otimizar a construção de aplicativos em Android. Mockup versão 1.3 
 
+# README #
+
+Documentação sobre o framework Mockup versão 1.3 
+
 
 ## 1. Adicione o repositório JitPack no seu arquivo build 
 
-```
+``` gradle
 allprojects {
 		repositories {
-			...
 			maven { url "https://jitpack.io" }
 		}
 	}
@@ -16,7 +19,7 @@ allprojects {
 
 ## 2. Adicione a dependência ##
 
-```
+``` gradle
 dependencies {
 		compile 'com.github.thiagomarques2015:mockup:-SNAPSHOT'
 }
@@ -26,8 +29,7 @@ dependencies {
 ### Iniciando Mockup ###
 
 
-```
-#!java
+``` java
 
 public class MainActivity extends AppCompatActivity {
 
@@ -57,8 +59,7 @@ O padrão de projeto Fábrica, é muito utilizado para centralizar a criação d
 
 No seu projeto, essa Classe **MyFactoryManager** precisa ser criada para permitir que sua aplicação interaja com os recursos da biblioteca. Deve ficar dessa maneira:
 
-```
-#!java
+``` java
 
 public class MyFactoryManager extends FactoryManager{
     private static MyFactoryManager ourInstance = new MyFactoryManager();
@@ -98,8 +99,7 @@ Todos os códigos de erros podem ser recuperados pelo método **getError**.
 
 A sua classe de conexão deve ficar da seguinte maneira:
 
-```
-#!java
+``` java
 
 public class HttpManager extends Request<HttpManager> {
 
@@ -139,14 +139,12 @@ public class HttpManager extends Request<HttpManager> {
 }
 ```
 
-
 Feito até aqui, sua aplicação está pronta para utilizar a requisição HTTP utilizando método POST ou GET. Exemplo de utilização:
 
 ## POST ##
 
 
-```
-#!java
+``` java
 
 // Configura o objeto da conexao para executar a operacao de publicar um post
 HttpManager request = new HttpManager().request(HttpManager.PUBLISH_POST);
@@ -163,8 +161,7 @@ response = request.getResponse();
 ## GET ##
 
 
-```
-#!java
+``` java
 
 // Configura o objeto da conexao para executar a operacao de publicar um post
 HttpManager request = new HttpManager().request(HttpManager.PUBLISH_POST);
@@ -180,8 +177,7 @@ response = request.getResponse();
 ### Adicionando/Removendo parâmetros ### 
 
 
-```
-#!java
+``` java
 
 // Configura o objeto da conexao para executar a operacao de publicar um post
 HttpManager request = new HttpManager().request(HttpManager.PUBLISH_POST);
@@ -217,8 +213,7 @@ Abaixo você irá ver um exemplo de como utilizar o recurso de abrir, processar 
 * circle -  Transforma a imagem em um circulo como saída
 * into - Recebe como parâmetro um **ImageView** referente a view que deseja visualizar a imagem
 
-```
-#!java
+``` java
 
 // Importando a fabrica de objetos do tipo Glide
 ObjectPool factory = MyFactoryManager.getInstance().getObjectPoolFactory().create(Constantes.Pool.GLIDE_IMAGE);
@@ -247,8 +242,7 @@ GlideFacade.open(factory, url)
   **factoryManager** - Instancia singleton do gerenciador de fábricas do seu aplicativo
 
 
-```
-#!java
+``` java
 
 public class MainCommandFactory extends Factory<MainCommand> {
 
@@ -261,8 +255,7 @@ public class MainCommandFactory extends Factory<MainCommand> {
 Onde **MainCommand** é sua classe de modelo para comandos que serão executados. Esta classe deve herdar de **Command** localizado no Mockup:
 
 
-```
-#!java
+``` java
 
 public abstract class MainCommand implements Command {
     @Override
@@ -275,8 +268,7 @@ public abstract class MainCommand implements Command {
 ### Utilizando o gerenciador de fábricas e configurando ele para manipular a fábrica principal de comandos ###
 
 
-```
-#!java
+``` java
 
 MyFactoryManager factoryManager = MyFactoryManager.getInstance();
 factoryManager.main(new MainFactory(context, "commands", factoryManager));
@@ -285,8 +277,7 @@ factoryManager.main(new MainFactory(context, "commands", factoryManager));
 ### Criando seu próprio facade para acionar os comandos de sua aplicação ###
 
 
-```
-#!java
+``` java
 
 public class MyCommandFacade extends CommandFacade {
     private static MyCommandFacade ourInstance = new MyCommandFacade();
@@ -324,8 +315,7 @@ Para criar um gerenciador de conexão basta criar uma classe que herde de **Requ
 * ERROR_INESPERADO = 2; // RunntimeException, NullpointerException
 * ERROR_SINTAXE_JSON = 3; // JSONException
 
-```
-#!java
+``` java
 
 public class HttpManager extends Request<HttpManager> {
 
@@ -360,8 +350,7 @@ public class HttpManager extends Request<HttpManager> {
 Para utilizar o gerenciador de tarefas, basta chamar o facade da seguinte forma:
 
 
-```
-#!java
+``` java
 
 AsyncTaskFacade.getInstance().create(PostTask.getInstance(), "post").delegate(this).execute();
 ```
@@ -369,8 +358,7 @@ AsyncTaskFacade.getInstance().create(PostTask.getInstance(), "post").delegate(th
 A classe **PostTask** deve herdar de **AsyncTask** do pacote Mockup, por exemplo:
 
 
-```
-#!java
+```java
 
 public class PostTask extends AsyncTask {
 
@@ -398,8 +386,7 @@ public class PostTask extends AsyncTask {
 ### Callback para tarefas ###
 
 
-```
-#!java
+```java
 
 @Override
 public void onTaskCompleted(String msg, Object object) {
