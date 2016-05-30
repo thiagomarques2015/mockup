@@ -1,4 +1,4 @@
-package br.net.mockup.model.factory;
+package br.net.mockup.control.glide;
 
 import android.content.Context;
 
@@ -6,10 +6,8 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.RequestManager;
 
 import br.net.mockup.Mockup;
-import br.net.mockup.control.glide.CircleTransform;
 import br.net.mockup.model.listener.PoolObject;
 import br.net.mockup.model.listener.PoolObjectFactory;
-import br.net.mockup.model.pool.GlideImagePool;
 
 /**
  * Created by Thiago on 30/07/2015.

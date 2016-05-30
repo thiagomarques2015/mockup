@@ -1,13 +1,12 @@
-package br.net.mockup.control.manager;
+package br.net.mockup.control.glide;
 
 import br.net.mockup.Mockup;
-import br.net.mockup.control.glide.CacheGlide;
-import br.net.mockup.model.manager.ObjectManager;
+import br.net.mockup.control.factory.ObjectManager;
 
 /**
  * Created by Thiago on 31/07/2015.
  */
-public class CacheGlideManager extends ObjectManager<CacheGlide> {
+class CacheGlideManager extends ObjectManager<CacheGlide> {
     private static CacheGlideManager instance = new CacheGlideManager();
     // Configuracoes do cache
     private String mimeType; // Codificacao
@@ -15,7 +14,7 @@ public class CacheGlideManager extends ObjectManager<CacheGlide> {
     private int orientation; // Orientacao: 1 - Portrait
 
     protected CacheGlideManager() {
-        super(Mockup.getInstance().getContext(), Mockup.getInstance().getFactoryManager(), "");
+        super(Mockup.getInstance().getContext(), Mockup.getInstance().getMockupFactoryManager(), "");
     }
 
     public static CacheGlideManager getInstance() {

@@ -7,13 +7,13 @@ import android.database.sqlite.SQLiteOpenHelper;
 /**
  * Created by Thiago on 09/11/2015.
  */
-public class DatabaseHelper extends SQLiteOpenHelper {
+public class MockupDatabaseHelper extends SQLiteOpenHelper {
 
     public static class Table{
         public static final String _ID = "_id";
     }
 
-    public DatabaseHelper(Context context, String bancoDados, int versao) {
+    public MockupDatabaseHelper(Context context, String bancoDados, int versao) {
         super(context, bancoDados, null, versao);
     }
 

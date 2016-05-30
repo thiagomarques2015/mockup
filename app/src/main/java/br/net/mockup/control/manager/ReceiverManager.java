@@ -8,7 +8,7 @@ import android.content.Intent;
  * Gerenciador de mensagens broadcast enviadas pelo app
  * Created by Thiago on 30/10/2015.
  */
-public class ReceiverManager {
+class ReceiverManager {
 
     private static BroadcastReceiver mRegistrationBroadcastReceiver = new BroadcastReceiver() {
         @Override
@@ -16,7 +16,7 @@ public class ReceiverManager {
             String command = intent.getStringExtra("command");
 
            /* // Cria o comando
-            CommandFacade c = CommandFacade.getInstance().factory(Mockup.getInstance().getFactoryManager()).command(command);
+            MockupCommandFacade c = MockupCommandFacade.getInstance().factory(Mockup.getInstance().getMockupFactoryManager()).command(command);
 *//*            // Seta o contexto
             c.getCommand().setContext(context);*//*
 

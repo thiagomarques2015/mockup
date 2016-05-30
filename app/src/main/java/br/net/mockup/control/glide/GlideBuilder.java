@@ -19,7 +19,7 @@ import br.net.mockup.Mockup;
  * Construtor de transformacoes da imagem
  * Created by Thiago on 28/07/2015.
  */
-public class GlideBuilder {
+class GlideBuilder {
 
     public static final int PORTRAIT = 1;
     // Reduz em 80% a qualidade da imagem

@@ -7,7 +7,7 @@ import com.bumptech.glide.signature.MediaStoreSignature;
 /**
  * Created by Thiago on 31/07/2015.
  */
-public class CacheGlide extends MediaStoreSignature  {
+class CacheGlide extends MediaStoreSignature  {
     /**
      * Constructor for {@link MediaStoreSignature}.
      *

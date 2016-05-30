@@ -8,19 +8,19 @@ import android.media.ImageReader;
 import android.support.v4.content.LocalBroadcastManager;
 
 import br.net.mockup.model.ImageParcelable;
-import br.net.mockup.model.config.Actions;
+import br.net.mockup.model.config.MockupActions;
 
 /**
  * Enviar mensagens broadcast para o aplicativo
  * Created by Thiago on 30/10/2015.
  */
-public class Broadcast {
+public class MockupBroadcast {
     private static Intent intent = new Intent();
-    private static IntentFilter filter = new IntentFilter(Actions.EXECUTE_COMMAND);
+    private static IntentFilter filter = new IntentFilter(MockupActions.EXECUTE_COMMAND);
 
     public static void send(Context context, byte[] data, String command){
         clearExtras();
-        intent.setAction(Actions.EXECUTE_COMMAND);
+        intent.setAction(MockupActions.EXECUTE_COMMAND);
         intent.putExtra("image", new ImageParcelable(data));
         intent.putExtra("command", command);
         LocalBroadcastManager.getInstance(context).sendBroadcast(intent);
@@ -28,7 +28,7 @@ public class Broadcast {
 
     public static void send(Context context, ImageReader reader, String command) {
         clearExtras();
-        intent.setAction(Actions.EXECUTE_COMMAND);
+        intent.setAction(MockupActions.EXECUTE_COMMAND);
         intent.putExtra("image", new ImageParcelable(reader));
         intent.putExtra("command", command);
         LocalBroadcastManager.getInstance(context).sendBroadcast(intent);
@@ -36,7 +36,7 @@ public class Broadcast {
 
     public static void send(Context context, String command) {
         clearExtras();
-        intent.setAction(Actions.EXECUTE_COMMAND);
+        intent.setAction(MockupActions.EXECUTE_COMMAND);
         intent.putExtra("command", command);
         LocalBroadcastManager.getInstance(context).sendBroadcast(intent);
     }

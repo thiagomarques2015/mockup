@@ -35,9 +35,9 @@ public class MainActivity extends AppCompatActivity {
         // Inicia o mockup
         Mockup mockup = Mockup.getInstance().setContext(this);
         // Configura o gerenciador de fabricas
-        FactoryManager factoryManager = MyFactoryManager.getInstance();
+        FactoryManager mockupFactoryManager = MyFactoryManager.getInstance();
         // Adiciona no mockup o gerenciador de fabricas
-        mockup.factoryManager(factoryManager);
+        mockup.mockupFactoryManager(mockupFactoryManager);
 
         // Restante do codigo
     }
@@ -234,15 +234,15 @@ GlideFacade.open(factory, url)
 
   **file** - Nome do arquivo de texto que contém os comandos do seu aplicativo (localizado na pasta app/assets)
 
-  **factoryManager** - Instancia singleton do gerenciador de fábricas do seu aplicativo
+  **mockupFactoryManager** - Instancia singleton do gerenciador de fábricas do seu aplicativo
 
 
 ``` java
 
 public class MainCommandFactory extends Factory<MainCommand> {
 
-    public MainCommandFactory(Context context, String file, FactoryManager factoryManager) {
-        super(context, file, factoryManager);
+    public MainCommandFactory(Context context, String file, FactoryManager mockupFactoryManager) {
+        super(context, file, mockupFactoryManager);
     }
 }
 ```
@@ -265,8 +265,8 @@ public abstract class MainCommand implements Command {
 
 ``` java
 
-MyFactoryManager factoryManager = MyFactoryManager.getInstance();
-factoryManager.main(new MainFactory(context, "commands", factoryManager));
+MyFactoryManager mockupFactoryManager = MyFactoryManager.getInstance();
+mockupFactoryManager.main(new MainFactory(context, "commands", mockupFactoryManager));
 ```
 
 ### Criando seu próprio facade para acionar os comandos de sua aplicação ###

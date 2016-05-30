@@ -1,17 +1,18 @@
-package br.net.mockup.model.commands;
+package br.net.mockup.control.commands;
 
 import android.content.Context;
 
 import br.net.mockup.model.ImageParcelable;
+import br.net.mockup.model.commands.Command;
 
 /**
  * Created by Thiago on 30/10/2015.
  */
-public abstract class MainCommand implements Command {
+public abstract class MockupMainCommand implements Command {
     private Context context; // Contexto da aplicacao
     private ImageParcelable image; // reader da imagem gerada pelo Lolipop
 
-    public MainCommand setContext(Context context) {
+    public MockupMainCommand setContext(Context context) {
         this.context = context;
         return this;
     }
@@ -20,7 +21,7 @@ public abstract class MainCommand implements Command {
         return context;
     }
 
-    public MainCommand setImage(ImageParcelable image) {
+    public MockupMainCommand setImage(ImageParcelable image) {
         this.image = image;
         return this;
     }

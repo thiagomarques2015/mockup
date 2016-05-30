@@ -9,7 +9,7 @@ import br.net.mockup.R;
 /**
  * Created by Thiago on 29/10/2015.
  */
-public class Camera extends Interface<Object> {
+class Camera extends Interface<Object> {
     private static Camera ourInstance = new Camera();
 
     private static final String DIRETORIO = "Google";
@@ -37,7 +37,7 @@ public class Camera extends Interface<Object> {
         return this;
     }
 
-    private void capturarImagem() {
+    public void capturarImagem() {
         Uri uri = InterfaceUtil.capturarCamera(diretorio);
         Intent intent = InterfaceUtil.criarIntentCapturarCamera(uri);
 

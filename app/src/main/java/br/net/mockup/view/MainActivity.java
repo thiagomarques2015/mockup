@@ -1,4 +1,4 @@
-package br.net.mockup;
+package br.net.mockup.view;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -10,9 +10,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-import br.net.mockup.model.fragment.BaseFragment;
+import br.net.mockup.R;
 
-public class MainActivity extends AppCompatActivity {
+class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,11 +28,11 @@ public class MainActivity extends AppCompatActivity {
         // Carrega os fragments da tab
         ArrayList<Map<String, Fragment>> fragments = new ArrayList<>();
 //        Fragment camera = new Fragment();
-        fragments.add(createItem("Eifles", new BaseFragment()));
-        fragments.add(createItem("Top", new BaseFragment()));
-        fragments.add(createItem("Recebido", new BaseFragment()));
-        fragments.add(createItem("Enviado", new BaseFragment()));
-        fragments.add(createItem("Amigos", new BaseFragment()));
+        fragments.add(createItem("Aba 1", new BaseFragment()));
+        fragments.add(createItem("Aba 2", new BaseFragment()));
+        fragments.add(createItem("Aba 3", new BaseFragment()));
+        fragments.add(createItem("Aba 3", new BaseFragment()));
+        fragments.add(createItem("Aba 4", new BaseFragment()));
         // Carrega os icones dos fragments
         ArrayList<Integer> icons = new ArrayList<>();
         /*

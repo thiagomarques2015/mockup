@@ -11,7 +11,7 @@ import java.util.Map;
 /**
  * Created by Thiago on 10/08/2015.
  */
-public class TabAdapter extends FragmentPagerAdapter {
+class TabAdapter extends FragmentPagerAdapter {
 
     private final int total;
     private ArrayList<Map<String, Fragment>> fragments;

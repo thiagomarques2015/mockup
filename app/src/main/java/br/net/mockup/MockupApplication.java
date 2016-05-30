@@ -1,17 +1,18 @@
 package br.net.mockup;
 
+import android.app.Application;
 import android.content.ComponentCallbacks2;
 import android.content.Context;
 import android.os.Handler;
 
-import br.net.mockup.model.manager.FactoryManager;
+import br.net.mockup.control.factory.MockupFactoryManager;
 
 import static br.net.mockup.control.util.Printlog.info;
 
 /**
  * Created by Thiago on 28/10/2015.
  */
-public class MockupApplication extends android.app.Application {
+public class MockupApplication extends Application {
 
     private static MockupApplication instance;
     private Handler handler = new Handler();
@@ -27,9 +28,9 @@ public class MockupApplication extends android.app.Application {
         mockup = Mockup.getInstance().setContext(this);
     }
 
-    public void factoryMain(FactoryManager factoryManager){
+    public void factoryMain(MockupFactoryManager mockupFactoryManager){
         // Adiciona ao mockup o gerenciador de fabricas
-        mockup.factoryManager(factoryManager);
+        mockup.factoryManager(mockupFactoryManager);
     }
 
     @Override

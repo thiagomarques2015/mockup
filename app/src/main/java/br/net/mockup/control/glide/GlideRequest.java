@@ -5,7 +5,6 @@ import android.net.Uri;
 import java.io.File;
 
 import br.net.mockup.Mockup;
-import br.net.mockup.model.config.Assets;
 
 import static br.net.mockup.control.util.Printlog.debug;
 import static br.net.mockup.control.util.Printlog.erro;
@@ -14,7 +13,9 @@ import static br.net.mockup.control.util.Printlog.erro;
  * Construtor de requisicao da imagem referente ao tipo da imagem (bytes, bitmap, etc.)
  * Created by Thiago on 28/07/2015.
  */
-public class GlideRequest {
+class GlideRequest {
+
+    public static final String DIRETORIO = "Mockup";
 
     public static final int BITMAP = 1;
     public static final int BYTES = 2;
@@ -29,7 +30,7 @@ public class GlideRequest {
                     glide.setUri(Uri.parse(String.format("android.resource://%s/%s", glide.getContext().getPackageName(), glide.getPlaceHolder())));
                 } else if (glide.getUrl().matches("^http.*")) { // Foto do servidor
                     glide.setUri(Uri.parse(glide.getUrl()));
-                } else if (glide.getUrl().matches(".*\\/" + Assets.DIRETORIO + "\\/.*")) { // Foto carregada do aparelho
+                } else if (glide.getUrl().matches(".*\\/" + DIRETORIO + "\\/.*")) { // Foto carregada do aparelho
                     glide.setUri(getUriStorage(glide.getUrl()));
                     if(glide.getUri() == null )
                         erro("=> Arquivo de imagem nao encontrado!");

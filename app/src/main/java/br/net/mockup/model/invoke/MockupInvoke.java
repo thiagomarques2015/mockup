@@ -5,15 +5,15 @@ import br.net.mockup.model.commands.Command;
 /**
  * Created by Thiago on 30/10/2015.
  */
-public class Invoke {
-    private static Invoke ourInstance = new Invoke();
+public class MockupInvoke {
+    private static MockupInvoke ourInstance = new MockupInvoke();
     private Command command;
 
-    public static Invoke getInstance() {
+    public static MockupInvoke getInstance() {
         return ourInstance;
     }
 
-    private Invoke() {
+    private MockupInvoke() {
     }
 
     public void setCommand(Command command) {

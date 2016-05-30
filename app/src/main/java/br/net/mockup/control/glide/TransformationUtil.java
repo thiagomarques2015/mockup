@@ -13,7 +13,7 @@ import com.bumptech.glide.load.engine.bitmap_recycle.BitmapPool;
 /**
  * Created by Thiago on 05/11/2015.
  */
-public class TransformationUtil {
+class TransformationUtil {
     private static final String TAG = "TransformationUtils";
     public static final int PAINT_FLAGS = Paint.ANTI_ALIAS_FLAG | Paint.DITHER_FLAG | Paint.FILTER_BITMAP_FLAG;
     /**

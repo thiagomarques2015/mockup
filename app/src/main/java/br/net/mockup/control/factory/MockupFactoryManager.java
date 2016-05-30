@@ -1,24 +1,22 @@
-package br.net.mockup.model.manager;
+package br.net.mockup.control.factory;
 
 import br.net.mockup.control.util.Printlog;
-import br.net.mockup.model.factory.Factory;
-import br.net.mockup.model.factory.ObjectPoolFactory;
 
 /**
  * Created by Thiago on 28/10/2015.
  */
-public abstract class FactoryManager {
+public abstract class MockupFactoryManager {
 
     private ObjectPoolFactory objectPoolFactory;
     private Factory mainCommandFactory;
 
-    public FactoryManager() {
+    public MockupFactoryManager() {
         Printlog.debug("=> Iniciando o gerenciador das fabricas");
         // Cria a fabrica de objetos reutilizaveis
         objectPoolFactory = new ObjectPoolFactory();
     }
 
-    public FactoryManager main(Factory mainCommandFactory){
+    public MockupFactoryManager main(Factory mainCommandFactory){
         this.mainCommandFactory = mainCommandFactory;
         return this;
     }

@@ -9,7 +9,7 @@ import android.util.Log;
  * Created by Thiago on 09/11/2015.
  */
 public abstract class Dao<T>{
-    private DatabaseHelper helper;
+    private MockupDatabaseHelper helper;
     private boolean isClose;
     private SQLiteDatabase db;
 
@@ -39,7 +39,7 @@ public abstract class Dao<T>{
         }
     }
 
-    protected DatabaseHelper getDatabase(Context context){
+    protected MockupDatabaseHelper getDatabase(Context context){
         return null;
     }
 

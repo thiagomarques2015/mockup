@@ -28,7 +28,7 @@ import com.bumptech.glide.load.resource.bitmap.BitmapTransformation;
 /**
  * Created by julian on 13/6/21.
  */
-public class CircleTransform extends BitmapTransformation {
+class CircleTransform extends BitmapTransformation {
 
     public CircleTransform(Context context) {
         super(context);

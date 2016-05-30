@@ -7,6 +7,8 @@ import com.loopj.android.http.AsyncHttpResponseHandler;
 
 import org.json.JSONObject;
 
+import java.io.UnsupportedEncodingException;
+
 import cz.msebera.android.httpclient.Header;
 import cz.msebera.android.httpclient.entity.StringEntity;
 
@@ -16,7 +18,7 @@ import static br.net.mockup.control.util.Printlog.erro;
 /**
  * Created by Thiago on 17/11/2015.
  */
-class HttpClientJSON {
+public class HttpClientJSON {
 
     private static final HttpClientJSON instance = new HttpClientJSON();
 
@@ -47,20 +49,38 @@ class HttpClientJSON {
         client.post(context, url, entity, "application/json", new AsyncHttpResponseHandler() {
             @Override
             public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
+
+                String response = getResponse(responseBody);
+
                 if (callbackJSON != null)
-                    callbackJSON.onSuccess(statusCode, responseBody);
+                    callbackJSON.onSuccess(statusCode, response, responseBody);
 
                 console(responseBody);
             }
 
             @Override
             public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
+
+                String response = getResponse(responseBody);
+
                 if (callbackJSON != null)
-                    callbackJSON.onFailure(statusCode, responseBody, error);
+                    callbackJSON.onFailure(statusCode, response, responseBody, error);
 
                 console(responseBody);
             }
         });
+    }
+
+    private String getResponse(byte[] responseBody){
+        String response = "";
+
+        try {
+            response = new String(responseBody, "UTF-8");
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+
+        return response;
     }
 
     private static void console(byte[] responseBody){

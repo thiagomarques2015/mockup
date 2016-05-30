@@ -11,10 +11,7 @@ import com.bumptech.glide.RequestManager;
 import com.bumptech.glide.load.DecodeFormat;
 import com.bumptech.glide.signature.MediaStoreSignature;
 
-import br.net.mockup.control.manager.CacheGlideManager;
-import br.net.mockup.model.listener.ImageDelegate;
 import br.net.mockup.model.listener.PoolObject;
-import br.net.mockup.model.listener.ReusableObject;
 import br.net.mockup.model.pool.ObjectPool;
 
 /**
@@ -22,7 +19,7 @@ import br.net.mockup.model.pool.ObjectPool;
  * https://github.com/bumptech/glide
  * Created by Thiago on 28/07/2015.
  */
-public class GlideImage implements ReusableObject{
+class GlideImage implements ReusableObject{
 
     private final CacheGlideManager cacheFactory; // Fabrica de objetos de cache
     private CircleTransform circleTransform;

@@ -2,7 +2,7 @@ package br.net.mockup;
 
 import android.content.Context;
 
-import br.net.mockup.model.manager.FactoryManager;
+import br.net.mockup.control.factory.MockupFactoryManager;
 
 /**
  * Created by Thiago on 10/11/2015.
@@ -10,7 +10,7 @@ import br.net.mockup.model.manager.FactoryManager;
 public class Mockup {
     private static Mockup ourInstance = new Mockup();
 
-    private FactoryManager factoryManager;
+    private MockupFactoryManager mockupFactoryManager;
     private Context context;
     private boolean debug;
     private boolean monitorTasks;
@@ -32,8 +32,8 @@ public class Mockup {
         return this;
     }
 
-    public Mockup factoryManager(FactoryManager factoryManager) {
-        this.factoryManager = factoryManager;
+    public Mockup factoryManager(MockupFactoryManager mockupFactoryManager) {
+        this.mockupFactoryManager = mockupFactoryManager;
         return this;
     }
 
@@ -46,9 +46,9 @@ public class Mockup {
         return debug;
     }
 
-    public FactoryManager getFactoryManager() {
-        if(factoryManager == null) throw new RuntimeException("Mockup precisa ser iniciado, chamar o metodo 'factoryManager'");
-        return factoryManager;
+    public MockupFactoryManager getMockupFactoryManager() {
+        if(mockupFactoryManager == null) throw new RuntimeException("Mockup precisa ser iniciado, chamar o metodo 'mockupFactoryManager'");
+        return mockupFactoryManager;
     }
 
     public Mockup activeMonitorTasks() {

@@ -1,4 +1,4 @@
-package br.net.mockup.model.fragment;
+package br.net.mockup.view;
 
 import android.support.v4.app.Fragment;
 

@@ -7,7 +7,7 @@ import static br.net.mockup.control.util.Printlog.debug;
 /**
  * Created by Thiago on 26/06/2015.
  */
-public class MyMonitorThread implements Runnable {
+class MyMonitorThread implements Runnable {
     ThreadPoolExecutor executor;
 
     public MyMonitorThread(ThreadPoolExecutor executor)

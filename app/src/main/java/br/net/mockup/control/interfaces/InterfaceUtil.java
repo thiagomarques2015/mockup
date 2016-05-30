@@ -11,7 +11,7 @@ import java.io.File;
 /**
  * Created by Thiago on 29/10/2015.
  */
-public class InterfaceUtil {
+class InterfaceUtil {
 
     public static final int GALERIA = 1;
     public static final int CAPTURAR_IMAGEM = 2;

@@ -1,14 +1,10 @@
-package br.net.mockup.model.factory;
+package br.net.mockup.control.factory;
 
 import android.content.Context;
 
 import java.util.HashMap;
 
-import br.net.mockup.model.config.Constantes;
-import br.net.mockup.model.listener.CreateFactory;
-import br.net.mockup.model.manager.FactoryManager;
 import br.net.mockup.model.pool.ObjectPool;
-import br.net.mockup.model.pool.PropertiesPool;
 
 import static br.net.mockup.control.util.Printlog.erro;
 import static br.net.mockup.control.util.Printlog.warm;
@@ -32,10 +28,10 @@ public abstract class Factory<T> implements CreateFactory {
      * Carrega o arquivo de propriedades dentro de {Assets}
      * @param fileName { nome do arquivo }
      */
-    public Factory(Context context, String fileName, FactoryManager factoryManager) {
+    public Factory(Context context, String fileName, MockupFactoryManager mockupFactoryManager) {
         objects = new HashMap<>();
         try {
-            poolProperties = factoryManager.getObjectPoolFactory().create(Constantes.Pool.PROPERTIES);
+            poolProperties = mockupFactoryManager.getObjectPoolFactory().create(Constantes.Pool.PROPERTIES);
             apelidos = (PropertiesPool) poolProperties.newObject();
             apelidos.load(context.getAssets().open(fileName));
         } catch (Exception e) {

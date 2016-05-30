@@ -1,11 +1,10 @@
-package br.net.mockup.model.manager;
+package br.net.mockup.control.factory;
 
 import android.content.Context;
 
 import java.util.HashMap;
 
 import br.net.mockup.Mockup;
-import br.net.mockup.model.factory.ObjectPoolFactory;
 import br.net.mockup.model.listener.PoolObject;
 import br.net.mockup.model.pool.ObjectPool;
 
@@ -20,11 +19,11 @@ public abstract class ObjectManager<T>{
     private final String nameObject;
     private ObjectPool objectPool;
 
-    protected ObjectManager(Context context, FactoryManager factoryManager, String nameObject) {
+    protected ObjectManager(Context context, MockupFactoryManager mockupFactoryManager, String nameObject) {
         this.nameObject = nameObject;
 
         if(!nameObject.isEmpty()){
-            ObjectPoolFactory factory = factoryManager.getObjectPoolFactory();
+            ObjectPoolFactory factory = mockupFactoryManager.getObjectPoolFactory();
             objectPool = factory.create(nameObject);
         }
 

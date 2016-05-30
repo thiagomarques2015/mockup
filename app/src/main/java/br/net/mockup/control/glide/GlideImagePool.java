@@ -1,6 +1,5 @@
-package br.net.mockup.model.pool;
+package br.net.mockup.control.glide;
 
-import br.net.mockup.control.glide.GlideImage;
 import br.net.mockup.model.listener.PoolObject;
 
 /**

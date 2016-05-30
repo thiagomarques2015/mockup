@@ -13,7 +13,7 @@ import java.util.List;
 /**
  * Created by Opera House on 29/01/2015.
  */
-public class ArrayAdapterWithIcon extends ArrayAdapter<String> {
+class ArrayAdapterWithIcon extends ArrayAdapter<String> {
     private List<Integer> images;
 
     public ArrayAdapterWithIcon(Context context, List<String> items, List<Integer> images) {

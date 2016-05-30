@@ -1,4 +1,4 @@
-package br.net.mockup.model.pool;
+package br.net.mockup.control.factory;
 
 import java.util.Properties;
 
@@ -7,7 +7,7 @@ import br.net.mockup.model.listener.PoolObject;
 /**
  * Created by Thiago on 03/06/2015.
  */
-public class PropertiesPool extends Properties implements PoolObject {
+class PropertiesPool extends Properties implements PoolObject {
     @Override
     public void initializePoolObject() {
         clear();

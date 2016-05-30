@@ -1,9 +1,8 @@
-package br.net.mockup.model.factory;
+package br.net.mockup.control.factory;
 
 
 import br.net.mockup.model.listener.PoolObject;
 import br.net.mockup.model.listener.PoolObjectFactory;
-import br.net.mockup.model.pool.PropertiesPool;
 
 /**
  * Created by Thiago on 03/06/2015.

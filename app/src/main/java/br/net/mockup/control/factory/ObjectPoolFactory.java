@@ -1,15 +1,15 @@
-package br.net.mockup.model.factory;
+package br.net.mockup.control.factory;
 
 import java.util.HashMap;
 
-import br.net.mockup.model.config.Constantes;
+import br.net.mockup.control.glide.GlideImagePoolFactory;
 import br.net.mockup.model.pool.ObjectPool;
 
 /**
  * Piscina de objetos reutilizaveis
  * Created by Thiago on 03/06/2015.
  */
-public class ObjectPoolFactory extends Factory<ObjectPool> {
+class ObjectPoolFactory extends Factory<ObjectPool> {
 
     private HashMap<String, Object> pools;
 

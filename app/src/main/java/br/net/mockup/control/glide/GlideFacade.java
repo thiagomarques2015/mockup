@@ -2,7 +2,6 @@ package br.net.mockup.control.glide;
 
 import android.net.Uri;
 
-import br.net.mockup.model.pool.GlideImagePool;
 import br.net.mockup.model.pool.ObjectPool;
 
 
