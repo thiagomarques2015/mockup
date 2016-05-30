@@ -46,9 +46,9 @@ public class MainActivity extends AppCompatActivity {
         // Inicia o mockup
         Mockup mockup = Mockup.getInstance().setContext(this);
         // Configura o gerenciador de fabricas
-        FactoryManager mockupFactoryManager = MyFactoryManager.getInstance();
+        FactoryManager factoryManager = MyFactoryManager.getInstance();
         // Adiciona no mockup o gerenciador de fabricas
-        mockup.mockupFactoryManager(mockupFactoryManager);
+        mockup.factoryManager(factoryManager);
 
         // Restante do codigo
     }
@@ -245,15 +245,15 @@ GlideFacade.open(factory, url)
 
   **file** - Nome do arquivo de texto que contém os comandos do seu aplicativo (localizado na pasta app/assets)
 
-  **mockupFactoryManager** - Instancia singleton do gerenciador de fábricas do seu aplicativo
+  **factoryManager** - Instancia singleton do gerenciador de fábricas do seu aplicativo
 
 
 ``` java
 
 public class MainCommandFactory extends Factory<MainCommand> {
 
-    public MainCommandFactory(Context context, String file, FactoryManager mockupFactoryManager) {
-        super(context, file, mockupFactoryManager);
+    public MainCommandFactory(Context context, String file, FactoryManager factoryManager) {
+        super(context, file, factoryManager);
     }
 }
 ```
@@ -276,13 +276,8 @@ public abstract class MainCommand implements Command {
 
 ``` java
 
-<<<<<<< HEAD
-MyFactoryManager mockupFactoryManager = MyFactoryManager.getInstance();
-mockupFactoryManager.main(new MainFactory(context, "commands", mockupFactoryManager));
-=======
 FactoryManager factoryManager = FactoryManager.getInstance();
 factoryManager.main(new MainFactory(context, "commands", factoryManager));
->>>>>>> 6aa481506d9f9f94d945b7ef0542c21d9dedd937
 ```
 
 ### 2.8 Criando seu próprio facade para acionar os comandos de sua aplicação ###
@@ -310,6 +305,11 @@ public class CommandFacade extends MockupCommandFacade {
 ### 2.9 Requisição HTTP do tipo JSON ###
 
 Classe para permitir enviar requisições http com o cabeçalho do tipo "application/json". Nele apenas objetos do tipo JSON são permitido enviar como parâmetros na requisição.
+
+_**Alguns métodos**_
+
+* **setContext** - Seta o contexto da aplicação 
+* **setCallbackJSON** - Seta o callback da requisição que rescreverá dois métodos **onSuccess** e **onFailure**
 
 Um exemplo de utilização da classe HtppClientJSON
 
@@ -344,7 +344,8 @@ int PORT = 3000;
 // Envia a requisição do tipo JSON
  HttpClientJSON.getInstance()
                         .setContext(this)
-                        .connect(url, json, new AsyncHttpClient(PORT, PORT), callback);
+                         .setCallbackJSON(callback)
+                        .connect(url, json, new AsyncHttpClient(PORT, PORT));
 ```
 
 ## 3. Atualizações ##
