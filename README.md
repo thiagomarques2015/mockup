@@ -1,7 +1,16 @@
 # Mockup
-Biblioteca para otimizar a construção de aplicativos em Android. Mockup versão 1.3 
+Biblioteca para otimizar a construção de aplicativos em Android.
 
-## 1. Adicione o repositório JitPack no seu arquivo build 
+## Índice
+
+1. [Instalação](#1-instala%C3%A7%C3%A3o) 
+1. [Funcionalidades](#2-funcionalidades)
+1. [Atualizações](#3-atualiza%C3%A7%C3%B5es)
+1. [Releases](#4-releases)
+
+## 1. Instalação 
+
+### 2.1. Adicione o repositório JitPack no seu arquivo build 
 
 ``` gradle
 allprojects {
@@ -12,7 +21,7 @@ allprojects {
 ```
 
 
-## 2. Adicione a dependência ##
+### 2.2. Adicione a dependência ##
 
 ``` gradle
 dependencies {
@@ -21,7 +30,9 @@ dependencies {
 ```
 
 
-### Iniciando Mockup ###
+## 2. Funcionalidades
+
+### 2.1 Iniciando Mockup ###
 
 
 ``` java
@@ -46,35 +57,35 @@ public class MainActivity extends AppCompatActivity {
 
 A classe **MyFactoryManager** ainda não foi criada e você precisa criar em seu projeto estendendo de **FactoryManager**. Veja na próxima seção como.
 
-### Seu próprio gerenciador de fábricas ###
+### 2.2 Seu próprio gerenciador de fábricas ###
 
 O padrão de projeto Fábrica, é muito utilizado para centralizar a criação de objetos de um mesmo tipo, para garantir que a criação dos objetos sejam feita por apenas um método, simplificando sua lógica de criação e evitando a descentralização em seu código. 
 
 [Exemplo de utilização do padrão Fábrica](http://www.tutorialspoint.com/design_pattern/factory_pattern.htm)
 
-No seu projeto, essa Classe **MyFactoryManager** precisa ser criada para permitir que sua aplicação interaja com os recursos da biblioteca. Deve ficar dessa maneira:
+No seu projeto, essa Classe **FactoryManager** precisa ser criada para permitir que sua aplicação interaja com os recursos da biblioteca. Deve ficar dessa maneira:
 
 ``` java
 
-public class MyFactoryManager extends FactoryManager{
+public class FactoryManager extends MockupFactoryManager{
     private static MyFactoryManager ourInstance = new MyFactoryManager();
 
-    public static MyFactoryManager getInstance() {
+    public static FactoryManager getInstance() {
         return ourInstance;
     }
 
-    private MyFactoryManager() {
+    private FactoryManager() {
     }
 }
 ```
 
 Se tudo estiver certo até aqui, seu projeto está pronto para utilizar a biblioteca :)  
 
-###  Utilizando requisições HTTP com métodos GET e POST ### 
+### 2.3 Utilizando requisições HTTP com métodos GET e POST ### 
 
 Para criar um gerenciador de conexão basta criar uma classe que herde de **Request<T>** passando por parâmetro a classe de contexto. Então você sobrescreverá o método **config** que recebe por parâmetro uma operação desejada. Essa classe possui alguns métodos como:
 
-### Métodos disponíveis ###
+**_Métodos disponíveis_**
 
 * add - adiciona um par-valor na requisição
 * remove - remove um valor da requisição
@@ -83,7 +94,7 @@ Para criar um gerenciador de conexão basta criar uma classe que herde de **Requ
 * getError - Retorna um código referente ao erro ocorrido
 
 
-### Códigos de erro ###
+_**Códigos de erro**_
 
 * NENHUM_ERROR = 0; // HttpException
 * ERROR_CONEXAO = 1; // HttpException
@@ -136,7 +147,7 @@ public class HttpManager extends Request<HttpManager> {
 
 Feito até aqui, sua aplicação está pronta para utilizar a requisição HTTP utilizando método POST ou GET. Exemplo de utilização:
 
-## POST ##
+**POST**
 
 
 ``` java
@@ -153,7 +164,7 @@ response = request.getResponse();
 ```
 
 
-## GET ##
+**GET**
 
 
 ``` java
@@ -169,7 +180,7 @@ json = request.send(HttpManager.GET);
 response = request.getResponse();
 ```
 
-### Adicionando/Removendo parâmetros ### 
+### 2.4 Adicionando/Removendo parâmetros ### 
 
 
 ``` java
@@ -190,7 +201,7 @@ request.config();
 
 ```
 
-### Utilizando imagens com o Glide ###
+### 2.5 Utilizando imagens com o Glide ###
 
 O Mockup foi inspirado pelo Glide para criar um framework que utilize uma sintaxe simples para resolver problemas rotineiros utilizando imagens no Android.
 
@@ -198,7 +209,7 @@ O Mockup foi inspirado pelo Glide para criar um framework que utilize uma sintax
 
 Abaixo você irá ver um exemplo de como utilizar o recurso de abrir, processar e trabalhar com imagens dentro do Android utilizando o Mockup e Glide.
 
-### Alguns métodos ###
+_**Alguns métodos**_
 
 * placeHolder - Recebe por parâmetro uma imagem **Drawable** para ser substituída em caso de erro de download da imagem principal
 * open - Recebe dois parâmetros como entrada a fábrica de criação de objetos glide e uma **URL, URI ou Drawable**
@@ -211,7 +222,7 @@ Abaixo você irá ver um exemplo de como utilizar o recurso de abrir, processar 
 ``` java
 
 // Importando a fabrica de objetos do tipo Glide
-ObjectPool factory = MyFactoryManager.getInstance().getObjectPoolFactory().create(Constantes.Pool.GLIDE_IMAGE);
+ObjectPool factory = FactoryManager.getInstance().getObjectPoolFactory().create(Constantes.Pool.GLIDE_IMAGE);
 
 // View da imagem
 ImageView photo;
@@ -227,7 +238,7 @@ GlideFacade.open(factory, url)
 ```
 
 
-### Criando uma fábrica de objetos (Factory Pattern) ###
+### 2.6 Criando uma fábrica de objetos (Factory Pattern) ###
 
 
   **context** - Contexto de sua aplicação
@@ -260,28 +271,28 @@ public abstract class MainCommand implements Command {
 }
 ```
 
-### Utilizando o gerenciador de fábricas e configurando ele para manipular a fábrica principal de comandos ###
+### 2.7 Utilizando o gerenciador de fábricas e configurando ele para manipular a fábrica principal de comandos ###
 
 
 ``` java
 
-MyFactoryManager factoryManager = MyFactoryManager.getInstance();
+FactoryManager factoryManager = FactoryManager.getInstance();
 factoryManager.main(new MainFactory(context, "commands", factoryManager));
 ```
 
-### Criando seu próprio facade para acionar os comandos de sua aplicação ###
+### 2.8 Criando seu próprio facade para acionar os comandos de sua aplicação ###
 
 
 ``` java
 
-public class MyCommandFacade extends CommandFacade {
+public class CommandFacade extends MockupCommandFacade {
     private static MyCommandFacade ourInstance = new MyCommandFacade();
 
-    public static MyCommandFacade getInstance() {
+    public static CommandFacade getInstance() {
         return ourInstance;
     }
 
-    private MyCommandFacade() {
+    private CommandFacade() {
 
     }
 
@@ -290,9 +301,52 @@ public class MyCommandFacade extends CommandFacade {
    }
 }
 ```
-## Mockup 1.1 ##
 
-### Criando o gerenciador de conexão ###
+### 2.9 Requisição HTTP do tipo JSON ###
+
+Classe para permitir enviar requisições http com o cabeçalho do tipo "application/json". Nele apenas objetos do tipo JSON são permitido enviar como parâmetros na requisição.
+
+Um exemplo de utilização da classe HtppClientJSON
+
+``` java
+
+// Callback da requisição depois de executada
+private HttpCallback.PostJSONListener callback = new HttpCallback.PostJSONListener() {
+        @Override
+        public void onSuccess(int i, String response, byte[] bytes) {
+            hideProgressDialog();
+            try {
+                JSONObject json = new JSONObject(response);
+                String code = json.getString("code");
+                
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+        }
+
+        @Override
+        public void onFailure(int i, String response, byte[] bytes, Throwable throwable) {
+
+        }
+ };
+
+// Configuracoes da requisição
+String url = "http://localhost";
+JSONObject json = new JSONObject();
+int PORT = 3000;
+
+// Envia a requisição do tipo JSON
+ HttpClientJSON.getInstance()
+                        .setContext(this)
+                        .connect(url, json, new AsyncHttpClient(PORT, PORT), callback);
+```
+
+## 3. Atualizações ##
+
+### Mockup 1.1 ###
+
+**1.1.1 Criando o gerenciador de conexão**
 
 Para criar um gerenciador de conexão basta criar uma classe que herde de **Request<T>** passando por parâmetro a classe de contexto. Então você sobrescreverá o método **config** que recebe por parâmetro uma operação desejada. Essa classe possui alguns métodos como:
 
@@ -303,7 +357,7 @@ Para criar um gerenciador de conexão basta criar uma classe que herde de **Requ
 * getError - Retorna um código referente ao erro ocorrido
 
 
-### Códigos de erro ###
+_**Códigos de erro**_
 
 * NENHUM_ERROR = 0; // HttpException
 * ERROR_CONEXAO = 1; // HttpException
@@ -338,9 +392,9 @@ public class HttpManager extends Request<HttpManager> {
 }
 ```
 
-## Mockup 1.2 ##
+### Mockup 1.2 ###
 
-### Gerenciador de tarefas ###
+**1.2.1 Gerenciador de tarefas**
 
 Para utilizar o gerenciador de tarefas, basta chamar o facade da seguinte forma:
 
@@ -378,7 +432,7 @@ public class PostTask extends AsyncTask {
 };
 ```
 
-### Callback para tarefas ###
+**Callback para tarefas**
 
 
 ```java
@@ -390,7 +444,7 @@ public void onTaskCompleted(String msg, Object object) {
 ```
 
 
-### Releases ###
+## 4. Releases ##
 
 Mockup 1.3
 
@@ -410,25 +464,3 @@ Mockup 1.0
 
 * Implementa navegação com tabs (material design - https://developer.android.com/intl/pt-br/design/material/index.html)
 * Utiliza a lib Glide (https://github.com/bumptech/glide) para abrir imagens (com design pattern) 
-
-
-
-### How do I get set up? ###
-
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
-
-### Contribution guidelines ###
-
-* Writing tests
-* Code review
-* Other guidelines
-
-### Who do I talk to? ###
-
-* Repo owner or admin
-* Other community or team contact
