@@ -25,7 +25,7 @@ allprojects {
 
 ``` gradle
 dependencies {
-		compile 'com.github.thiagomarques2015:mockup:-SNAPSHOT'
+		compile 'com.github.thiagomarques2015:mockup:b66f9b6a88'
 }
 ```
 
