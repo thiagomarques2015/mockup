@@ -9,7 +9,7 @@ import br.net.mockup.model.pool.ObjectPool;
  * Piscina de objetos reutilizaveis
  * Created by Thiago on 03/06/2015.
  */
-class ObjectPoolFactory extends Factory<ObjectPool> {
+public class ObjectPoolFactory extends Factory<ObjectPool> {
 
     private HashMap<String, Object> pools;
 
