@@ -19,7 +19,7 @@ import br.net.mockup.model.pool.ObjectPool;
  * https://github.com/bumptech/glide
  * Created by Thiago on 28/07/2015.
  */
-class GlideImage implements ReusableObject{
+public class GlideImage implements ReusableObject{
 
     private final CacheGlideManager cacheFactory; // Fabrica de objetos de cache
     private CircleTransform circleTransform;
