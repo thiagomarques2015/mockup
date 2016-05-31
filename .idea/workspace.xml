@@ -11,7 +11,7 @@
   <component name="ChangeListManager">
     <list default="true" id="b8a67a2e-a625-4e54-abaa-df6cd8c273d9" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/br/net/mockup/control/glide/GlideImage.java" afterPath="$PROJECT_DIR$/app/src/main/java/br/net/mockup/control/glide/GlideImage.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/br/net/mockup/control/glide/GlideRequest.java" afterPath="$PROJECT_DIR$/app/src/main/java/br/net/mockup/control/glide/GlideRequest.java" />
     </list>
     <ignored path="mockup.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -47,16 +47,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/build.gradle">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="28" column="9" selection-start-line="28" selection-start-column="9" selection-end-line="28" selection-end-column="9" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="build.gradle" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/build.gradle">
           <provider selected="true" editor-type-id="text-editor">
@@ -107,14 +97,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GlideImage.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="GlideImage.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/br/net/mockup/control/glide/GlideImage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.33333334">
+            <state vertical-scroll-proportion="0.0">
               <caret line="21" column="7" selection-start-line="21" selection-start-column="7" selection-end-line="21" selection-end-column="7" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GlideRequest.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/br/net/mockup/control/glide/GlideRequest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.15632184">
+              <caret line="15" column="7" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="7" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -1804,7 +1804,6 @@
         <option value="$PROJECT_DIR$/app/src/main/java/br/net/mockup/control/manager/CacheGlideManager.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/br/net/mockup/control/glide/CacheGlideManager.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/br/net/mockup/control/glide/GlideBuilder.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/br/net/mockup/control/glide/GlideRequest.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/br/net/mockup/control/glide/CacheGlide.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/br/net/mockup/control/glide/CircleTransform.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/br/net/mockup/control/glide/TransformationUtil.java" />
@@ -1845,6 +1844,7 @@
         <option value="$PROJECT_DIR$/app/src/main/java/br/net/mockup/control/factory/MockupConstantes.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/br/net/mockup/control/factory/ObjectPoolFactory.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/br/net/mockup/control/glide/GlideImage.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/br/net/mockup/control/glide/GlideRequest.java" />
       </list>
     </option>
   </component>
@@ -2706,13 +2706,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/br/net/mockup/control/task/AsyncTask.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.15632184">
-          <caret line="14" column="22" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/br/net/mockup/control/glide/GlideImagePoolFactory.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.37126437">
@@ -3083,11 +3076,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/br/net/mockup/control/glide/GlideImage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33333334">
+        <state vertical-scroll-proportion="0.0">
           <caret line="21" column="7" selection-start-line="21" selection-start-column="7" selection-end-line="21" selection-end-column="7" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/br/net/mockup/control/glide/GlideRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.15632184">
+          <caret line="15" column="7" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="7" />
+          <folding />
         </state>
       </provider>
     </entry>

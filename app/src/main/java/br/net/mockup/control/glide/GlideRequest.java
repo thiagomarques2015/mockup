@@ -13,7 +13,7 @@ import static br.net.mockup.control.util.Printlog.erro;
  * Construtor de requisicao da imagem referente ao tipo da imagem (bytes, bitmap, etc.)
  * Created by Thiago on 28/07/2015.
  */
-class GlideRequest {
+public class GlideRequest {
 
     public static final String DIRETORIO = "Mockup";
 
