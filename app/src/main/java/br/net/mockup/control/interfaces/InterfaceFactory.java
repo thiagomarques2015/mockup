@@ -6,7 +6,7 @@ package br.net.mockup.control.interfaces;
 public class InterfaceFactory {
 
     public static final int PHOTO_CHOICE_DIALOG = 1;
-    private static final int PHOTO_CAMERA = 2;
+    public static final int PHOTO_CAMERA = 2;
 
     public static Interface create(int name){
         switch (name){

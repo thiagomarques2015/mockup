@@ -11,7 +11,7 @@ import br.net.mockup.R;
 /**
  * Created by Thiago on 15/10/2015.
  */
-class ChoicePhoto extends MultChoice {
+public class ChoicePhoto extends MultChoice {
 
     private static ChoicePhoto instance = new ChoicePhoto();
 

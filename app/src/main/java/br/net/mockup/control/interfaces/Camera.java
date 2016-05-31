@@ -9,7 +9,7 @@ import br.net.mockup.R;
 /**
  * Created by Thiago on 29/10/2015.
  */
-class Camera extends Interface<Object> {
+public class Camera extends Interface<Object> {
     private static Camera ourInstance = new Camera();
 
     private static final String DIRETORIO = "Google";
