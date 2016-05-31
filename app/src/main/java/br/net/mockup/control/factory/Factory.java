@@ -31,7 +31,7 @@ public abstract class Factory<T> implements CreateFactory {
     public Factory(Context context, String fileName, MockupFactoryManager mockupFactoryManager) {
         objects = new HashMap<>();
         try {
-            poolProperties = mockupFactoryManager.getObjectPoolFactory().create(Constantes.Pool.PROPERTIES);
+            poolProperties = mockupFactoryManager.getObjectPoolFactory().create(MockupConstantes.Pool.PROPERTIES);
             apelidos = (PropertiesPool) poolProperties.newObject();
             apelidos.load(context.getAssets().open(fileName));
         } catch (Exception e) {

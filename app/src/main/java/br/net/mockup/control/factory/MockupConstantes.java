@@ -1,10 +1,10 @@
 package br.net.mockup.control.factory;
 
 /**
- * Constantes de configuracoes
+ * MockupConstantes de configuracoes
  * Created by Thiago on 05/06/2015.
  */
-abstract class Constantes {
+public abstract class MockupConstantes {
 
     /**
      * Comandos para criar Objetos de piscina

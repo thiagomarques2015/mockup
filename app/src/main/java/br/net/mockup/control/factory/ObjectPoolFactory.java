@@ -17,9 +17,9 @@ class ObjectPoolFactory extends Factory<ObjectPool> {
         super();
         pools = new HashMap<>();
         // Iniciar os objetos pools da aplicacao
-        pools.put(Constantes.Pool.PROPERTIES, new ObjectPool(new PropertiesPoolFactory(), 1));
-        //pools.put(Constantes.Pool.REQUEST, new ObjectPool(new RequestPoolFactory(), 5)); // No maximo 5 objetos conexao reusaveis
-        pools.put(Constantes.Pool.GLIDE_IMAGE, new ObjectPool(new GlideImagePoolFactory(), 200)); // Maximo de imagens com a biblioteca glide
+        pools.put(MockupConstantes.Pool.PROPERTIES, new ObjectPool(new PropertiesPoolFactory(), 1));
+        //pools.put(MockupConstantes.Pool.REQUEST, new ObjectPool(new RequestPoolFactory(), 5)); // No maximo 5 objetos conexao reusaveis
+        pools.put(MockupConstantes.Pool.GLIDE_IMAGE, new ObjectPool(new GlideImagePoolFactory(), 200)); // Maximo de imagens com a biblioteca glide
     }
 
     /**
